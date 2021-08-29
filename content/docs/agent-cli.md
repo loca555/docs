@@ -13,7 +13,7 @@ next: '/docs/agent-docker/'
 
 ## 1. Настройка
 
-### Установить
+### Установка
 
 ```bash
 npm i -g croncat near-cli
