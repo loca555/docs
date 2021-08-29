@@ -5,44 +5,44 @@ sidebar: 'docs'
 next: '/docs/agent-docker/'
 ---
 
-# Agent CLI
+# Агент CLI
 
-Welcome friend! If you are here, you're likely interested in setting up a cron agent, to help decentralized the cron tasks & earn rewards! This guide is dedicated to getting you setup, all the way from nothing to getting tasks running. Please note, you will need some NEAR funds to be able to trigger transactions. Don't worry, all of the funds needed to sign transactions will be awarded back to you, in addition to rewards you will earn.
+Привет друг! Поскольку ты здесь, ты вероятно заинтересован в установке cron agent, чтобы помочь в децентрализации cron и зарабатывать вознаграждения выполняя задачи! Это руководство посвящено настройке, с нуля до создания собственных задач. Обратите внимание: вам понадобятся немного токенов NEAR, чтобы иметь возможность подписывать транзакции. Но не волнуйтесь, все средства, необходимые для подписания транзакций, будут возвращены в дополнение к вознаграждениям, которые вы заработаете.
 
-As a task runner, you can provide Cron with a reliable ongoing triggering mechanism by registering your server as an official Cron agent. This will take a few steps, so let's get started! 
+Как исполнитель задач, вы можете поставлять Cron с надежным и постоянным механизмом который будет подписывать транзакции, зарегистрировав свой сервер в качестве официального агента Cron. Это займет несколько шагов, так что приступим! 
 
-## 1. Setup
+## 1. Настройка
 
-### Install
+### Установить
 
 ```bash
 npm i -g croncat near-cli
 ```
 
-### Login
+### Логин
 
-Before running the agent make sure you are logged in with near:
+Перед запуском агента убедитесь, что вы вошли в аккаунт NEAR:
 
 ```bash
 near login
 ```
 
-Being logged in allows your cron agent to have a funded account. If you do not have a near account with 1 NEAR or more, you can setup one here: [Setup NEAR Wallet](https://wallet.near.org/)
+Авторизация позволяет вашему cron-агенту иметь доступ к аккаунту, который будет использоваться для подписи транзакций. Если у вас нет NEAR аккаунта с 1 NEAR или более, вы можете создать его здесь: [Создать NEAR Кошелек](https://wallet.near.org/)
 
-Alternatively, you can create a new set of keys just for croncat agent:
+В качестве альтернативы вы можете создать новый набор ключей только для агента croncat:
 
 ```bash
 near generate-key agent-007.testnet
 ```
 
-This should create the following directory (if it doesn't exist already):
+Это должно создать следущую директорию (если оно не была созданна раннее):
 
 ```bash
 ls ~/.near-credentials
 default testnet
 ```
 
-Once generated, copy the public key (which will be used to add as a signer for a funded account), then do the following command with the funded account you own:
+После создания скопируйте открытый ключ (который будет использоваться для добавления как signer), затем выполните следующую команду с финансируемой учетной записью, которой вы владеете:
 
 ```bash
 near add-key your_account.testnet ed25519:EkiM...
